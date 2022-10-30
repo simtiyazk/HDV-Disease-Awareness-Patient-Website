@@ -1,0 +1,251 @@
+// sass-lint:disable-all
+// modal container
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+  background-color: $modal-backdrop;
+
+  // animate slide down
+  &.fade .modal-dialog {
+    transition: transform .3s ease-out;
+    transform: translate(0, -25%);
+  }
+
+  &.in .modal-dialog {
+    transform: translate(0, 0);
+  }
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: auto;
+}
+
+// modal content
+.modal-content {
+  position: relative;
+  background-color: $color-ecru-white;
+
+  @include border-radius(10px);
+  // Remove focus outline from opened modal
+  outline: 0;
+
+  @include breakpoint ("tablet-up") {
+    padding: 30px 30px 10px;
+  }
+}
+
+// modal background
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal-bg;
+
+
+  // fade backdrop
+  &.fade {
+    opacity: 0;
+  }
+
+  &.in {
+    opacity: $modal-backdrop-opacity;
+  }
+}
+
+// modal header
+.modal-header {
+  @include clearfix;
+  padding: 1.5rem;
+
+  @include breakpoint ("tablet-up") {
+    padding: 0 0 3rem;
+  }
+
+  .close {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 2rem;
+    border: none;
+    background-image: url("/images/global/button-close.svg");
+    background-repeat: no-repeat;
+    background-size: 4rem;
+    background-color: transparent;
+    text-align: right;
+    margin: 0 0 0 auto;
+  }
+}
+
+//modal list
+.modal-list {
+  padding-left: 15px;
+
+  li {
+    font-size: 12px;
+    color: $color-turquoise;
+    margin-bottom: em(10,12);
+
+    p {
+      color: $color-gray;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// title text within header
+.modal-title {
+  margin: 1rem 0 0;
+  line-height: 4rem;
+  font-size: 2.8rem;
+  color: $color-grape;
+  font-weight: $bold;
+}
+
+// modal body
+.modal-body {
+  position: relative;
+  padding: 0 1.5rem;
+
+  p {
+    margin: 0 0 12px;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    color: $color-mind-shaft;
+
+    a {
+      text-decoration: none;
+      color: $color-cardinal
+    }
+  }
+}
+
+// modal footer
+.modal-footer {
+  padding: $modal-inner-padding;
+  text-align: left;
+  border: none;
+
+  @include clearfix();
+
+  a{
+    margin: 1rem 0;
+
+
+    &.continue {
+      display: inline-block;
+      min-width: 13.9rem;
+      height: 6rem;
+      padding: 1.7rem 3.6rem;
+      border-radius: 1.5rem;
+      background-color: $color-cardinal;
+      font-family: "Rubik";
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 2.6rem;
+      letter-spacing: -.02rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    &.back {
+      display: inline-block;
+      min-width: 13.9rem;
+      height: 6rem;
+      padding: 1.7rem 3.6rem;
+      border-radius: 1.5rem;
+      background-color: transparent;
+      font-family: "Rubik";
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 2.6rem;
+      letter-spacing: -.02rem;
+      text-decoration: none;
+      color: $color-cardinal;
+      border: 2px solid $color-cardinal;
+
+      @include breakpoint ("tablet-up") {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
+//specific modals
+#additional-tc {
+  .modal-dialog {
+    top: 10%;
+
+    @include breakpoint("phone") {
+      top: 2%;
+      margin-bottom: em(70);
+    }
+  }
+
+  .subtitle {
+    margin-bottom: em(10,20);
+  }
+
+  .modal-body {
+    padding-bottom: em(10);
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+// Scale
+
+@include breakpoint("phone") {
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    // max-width: $modal-sm;
+    max-width: 34.2rem;
+    margin: 0 auto;
+    top: 30%;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+// @include breakpoint('phone-up') {
+//   // Automatically set modal's width for larger viewports
+//   .modal-dialog {
+//     max-width: $modal-md;
+//     margin: 0 auto;
+//     top: 30%;
+//   }
+// }
+
+@include breakpoint("tablet-up") {
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    max-width: 73rem;
+    margin: 0 auto;
+    top: 30%;
+  }
+}
+
+@include breakpoint("desktop") {
+  .modal-lg {
+    max-width: $modal-lg;
+  }
+}
+// sass-lint:enable-all

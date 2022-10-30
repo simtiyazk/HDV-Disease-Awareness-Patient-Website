@@ -1,0 +1,70 @@
+.#{ $prefix }-m-footer {
+  padding-top: 3.1rem;
+  padding-bottom: 6.6rem;
+  background: $color-tundora;
+  color: $white;
+
+  ul {
+    margin-bottom: 0;
+    padding: 2.8rem 0 3rem;
+
+    li {
+      display: inline-block;
+      font-size: 1.6rem;
+      font-weight: $bold;
+      line-height: 2.2rem;
+
+      a {
+        color: $white;
+      }
+
+      &:not(:last-child):after {
+        content: "|";
+        font-size: 1.8rem;
+        margin: 0 1.1rem 0 1.7rem;
+      }
+    }
+
+    @include breakpoint("desktop") {
+      padding: 1rem 0;
+    }
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  img {
+    max-width: 20rem;
+    width: 100%;
+  }
+
+  @include breakpoint("phone-up") {
+    padding-top: 5rem;
+
+    .container {
+      .row:first-child {
+        margin-bottom: 3rem;
+
+        > div {
+          align-self: center;
+
+          &:first-child {
+            max-width: 25rem;
+          }
+        }
+      }
+    }
+
+    ul {
+      padding: 0;
+
+      li {
+        &:not(:last-child):after {
+          margin: 0 1rem 0 1.5rem;
+        }
+      }
+    }
+  }
+}

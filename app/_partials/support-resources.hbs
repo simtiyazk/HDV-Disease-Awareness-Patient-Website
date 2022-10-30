@@ -1,0 +1,32 @@
+<section class="{{prefix}}-m-support-resources">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="{{prefix}}-m-support-resources_content">
+          <h1>{{ data.headline }}</h1>
+          <h4>{{ data.subheadline }}</h4>
+          <div class="{{global.prefix}}-m-support-resources_cards">
+            {{#each data.cards}}
+                <div class="{{../global.prefix}}-m-support-resources_cards_item {{ this.card_color }} col-lg-5">
+                  <div class="col-lg-8">
+                    <h6 class="{{../global.prefix}}-m-support-resources_cards_item__headline">{{ this.headline }}</h6>
+                    <p class="{{../global.prefix}}-m-support-resources_cards_item__paragraph">{{ this.paragraph }}</p>
+                    <a class="{{../global.prefix}}-m-support-resources_cards_item__link {{#if this.btn_download }}{{else}} {{this.anchorClass}}{{/if}}" href="{{ this.btn_link }}" {{#if this.btn_download }}target="_blank" download {{/if}} {{{this.tracking}}}> {{this.btn_text}} <img src="{{#if this.downloadIcon }}
+                    {{this.downloadIcon}}
+                    {{else}} {{this.regularIcon}}
+                    {{/if}}" alt="arrow" {{{this.tracking}}}></a>
+                  </div>
+                  {{#if this.image }}
+                    <div class="{{../global.prefix}}-m-support-resources_cards_item__image col-lg-4">
+                      <img src="{{ this.image }}" alt="{{this.imgAlt}}"/>
+                    </div>
+                  {{/if }}
+                </div>
+            {{/each}}
+          </div>
+          {{> scroll-to-next data=data.next_section}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

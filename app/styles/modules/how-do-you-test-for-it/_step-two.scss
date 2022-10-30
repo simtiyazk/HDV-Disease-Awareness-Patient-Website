@@ -1,0 +1,218 @@
+.#{$prefix}-m-how-do-you-test-step-two {
+  padding-bottom: 5rem;
+
+  @include breakpoint("tablet-up"){
+    padding: 8rem 0 0;
+    height: 100vh;
+  }
+
+  @media (-webkit-device-pixel-ratio: 1.25) and (min-width: 992px), (-webkit-device-pixel-ratio: 1.5) and (min-width: 992px){
+    height: fit-content;
+  }
+
+  @media (max-height:1080px){
+    height: auto !important;
+  }
+
+  &__content {
+    h1 {
+      font-family: $font-rubik;
+      font-size: 2.6rem;
+      font-weight: $bold;
+      line-height: 1.23;
+      letter-spacing: -0.03rem;
+      color: $color-cardinal;
+      margin: 3rem 2rem 1rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      letter-spacing: -0.03rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: $color-grape;
+      line-height: 2.6rem;
+    }
+
+    h3{
+      padding-right: 2rem;
+      color: $color-tawny-port;
+    }
+
+    h5 {
+      font-size: 1.8rem;
+      text-align: left;
+      color: $color-mind-shaft;
+      font-weight: $bold;
+      margin: 0 3rem;
+    }
+
+    p {
+      font-size: 2rem;
+      letter-spacing: -0.02rem;
+      text-align: center;
+      color: $color-mind-shaft;
+      font-weight: $bold;
+      margin: 0 1rem 1rem;
+    }
+
+    &__status-main {
+      text-align: center;
+
+      .status-two {
+        width: 13rem;
+        border-radius: 1.5rem;
+        background-color: $color-grape;
+        margin: 3rem auto 1.5rem;
+        padding: 1.2rem;
+
+        span {
+          font-family: $font-rubik;
+          font-size: 3.2rem;
+          font-weight: $bold;
+          line-height: 3.2rem;
+          text-align: center;
+          color: $color-white;
+        }
+      }
+
+      .status-two-image img {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      .img-desktop {
+        display: none;
+      }
+
+      .show-desk {
+        display: none;
+      }
+    }
+
+    .download {
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .callout {
+      display: flex;
+      background-color: $color-texas-rose;
+      border-radius: 1.5rem;
+      padding: 1.5rem 2rem;
+      margin-top: 3rem;
+
+      img {
+        width: 3rem;
+        height: 3rem;
+        margin: auto;
+        display: block;
+      }
+    }
+
+    .#{$prefix}-c-scroll-to-next {
+      margin-top: 5rem;
+      text-align: center;
+    }
+  }
+
+  @include breakpoint("tablet-up") {
+    &__content {
+      h1 {
+        font-size: 5.6rem;
+        font-weight: $bold;
+        line-height: 6.2rem;
+        letter-spacing: -0.04rem;
+        margin: 3.5rem 2rem 2rem;
+      }
+
+      h2 {
+        font-size: 4rem;
+        letter-spacing: -0.04rem;
+        margin-bottom: 3rem;
+        line-height: 4.6rem;
+        text-align: left;
+        padding-left: 2rem;
+        padding-right: 8rem;
+      }
+
+      h5 {
+        font-size: 2.2rem;
+        letter-spacing: -0.03rem;
+        margin: 0 3rem;
+      }
+
+      p {
+        font-size: 2.6rem;
+        letter-spacing: -0.03rem;
+        margin: 0;
+      }
+
+      &__status-main {
+        .status-two-badge {
+          display: flex;
+          justify-content: space-around;
+          margin: 7rem;
+
+          .status-two {
+            margin: 0;
+            width: 22.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+              font-size: 4rem;
+              line-height: 4.6rem;
+            }
+          }
+
+          h2 {
+            margin: auto;
+          }
+        }
+
+        .status-two-image {
+          display: flex;
+
+          h5 {
+            margin: auto -8rem;
+            width: 29rem;
+          }
+        }
+
+        img {
+          display: none;
+
+          &.img-desktop {
+            display: block;
+            width: 75%;
+            margin-bottom: 3rem;
+            margin-left: 4rem;
+          }
+        }
+      }
+    }
+
+    .callout {
+      width: 80rem;
+      margin: 4rem auto;
+      padding: 2rem;
+
+      h3 {
+        font-size: 2.8rem;
+        line-height: 4rem;
+        padding-left: 2rem;
+      }
+    }
+
+    .show-desk {
+      display: block !important;
+    }
+
+    .#{$prefix}-c-scroll-to-next {
+      margin: 3.6rem 0 5rem;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<section id="how-do-you-test-step-two" class="{{ global.prefix }}-m-how-do-you-test-step-two">
+  <div class="container {{prefix}}-m-how-do-you-test-step-two__content">
+    <div class="{{prefix}}-m-how-do-you-test-step-two__content__status-main">
+      <div class="status-two-badge">
+        <div class="status-two">
+          <span>Step 2</span>
+        </div>
+        <h2>{{data.stepTwo.stepTwoTitle}}</h2>
+      </div>
+      <div class="status-two-image">
+        <img src="{{data.stepTwo.srcMob}}" alt="{{data.stepTwo.alt}}"/>
+        <img class="img-desktop" src="{{data.stepTwo.src}}" alt="{{data.stepTwo.alt}}"/>
+        <h5>{{data.stepTwo.stepTwoDesp}}</h5>
+      </div>
+      <a class="download" href="{{data.stepTwo.download}}" download>
+        <div class="callout">
+          <h3>{{{data.stepTwo.callout}}}</h3>
+          <img src="{{data.stepTwo.calloutSrc}}" alt="{{data.stepTwo.alt}}"/>
+        </div>
+      </a>
+    </div>
+    {{> scroll-to-next data=data.stepTwo.next_section}}
+  </div>
+</section>

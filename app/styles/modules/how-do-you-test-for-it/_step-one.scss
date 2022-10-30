@@ -1,0 +1,173 @@
+.#{$prefix}-m-how-do-you-test-for-it {
+  padding-bottom: 5rem;
+
+  @include breakpoint("tablet-up"){
+    padding: 8rem 0 0;
+    height: 100vh;
+  }
+
+  @media (-webkit-device-pixel-ratio: 1.25) and (min-width: 992px), (-webkit-device-pixel-ratio: 1.5) and (min-width: 992px){
+    height: fit-content;
+  }
+
+  @media (max-height:1080px){
+    height: auto !important;
+  }
+
+  &__content {
+    h1 {
+      font-family: $font-rubik;
+      font-size: 2.8rem;
+      font-weight: $bold;
+      line-height: 4rem;
+      letter-spacing: -0.03rem;
+      color: $color-cardinal;
+      margin: 3rem 2rem 2rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      letter-spacing: -0.03rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: $color-grape;
+      line-height: 2.6rem;
+
+      @include breakpoint("tablet-up"){
+        line-height: 4.6rem;
+      }
+    }
+
+
+    h5 {
+      font-size: 1.8rem;
+      text-align: left;
+      color: $color-mind-shaft;
+      font-weight: $bold;
+      margin: 0 3rem;
+    }
+
+    p {
+      font-size: 2.2rem;
+      letter-spacing: -0.02rem;
+      text-align: center;
+      color: $color-mind-shaft;
+      font-weight: $bold;
+      margin: 0 1rem 1rem;
+      line-height: 3.2rem;
+    }
+
+    &__status-main {
+      text-align: center;
+
+      .status-one {
+        width: 13rem;
+        border-radius: 1.5rem;
+        background-color: $color-grape;
+        margin: 3rem auto 1.5rem;
+        padding: 1.2rem;
+
+        span {
+          font-family: $font-rubik;
+          font-size: 3.2rem;
+          font-weight: $bold;
+          line-height: 3.2rem;
+          text-align: center;
+          color: $color-white;
+          margin-top: 3rem;
+        }
+      }
+
+      .status-one-image img {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      .img-desktop {
+        display: none;
+      }
+    }
+
+    .#{$prefix}-c-scroll-to-next {
+      margin-top: 5rem;
+      text-align: center;
+    }
+  }
+
+  @include breakpoint("tablet-up") {
+    &__content {
+      h1 {
+        font-size: 5.6rem;
+        font-weight: $bold;
+        line-height: 6.2rem;
+        letter-spacing: -0.04rem;
+        margin: 3.5rem 2rem 2rem;
+      }
+
+      h2 {
+        font-size: 4rem;
+        letter-spacing: -0.04rem;
+        margin-bottom: 3rem;
+      }
+
+      h5 {
+        font-size: 2.2rem;
+        letter-spacing: -0.03rem;
+        margin: 0 3rem;
+      }
+
+      p {
+        font-size: 2.6rem;
+        letter-spacing: -0.03rem;
+        margin: 0;
+        line-height: 3.2rem;
+      }
+
+      &__status-main {
+        .status-one-badge {
+          display: flex;
+          justify-content: space-around;
+          margin: 7rem auto;
+
+          .status-one {
+            margin: 0;
+            width: 16.2rem;
+
+            span {
+              font-size: 4rem;
+              line-height: 4.6rem;
+            }
+          }
+
+          h2 {
+            margin: auto;
+          }
+        }
+
+        .status-one-image {
+          display: flex;
+
+          h5 {
+            margin: auto -8rem;
+            width: 29rem;
+            line-height: 3.2rem;
+          }
+        }
+
+        img {
+          display: none;
+
+          &.img-desktop {
+            display: block;
+            width: 85%;
+          }
+        }
+      }
+    }
+
+    .#{$prefix}-c-scroll-to-next {
+      margin: 8.6rem 0 5rem;
+    }
+  }
+}

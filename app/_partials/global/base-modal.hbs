@@ -1,0 +1,19 @@
+<div class="{{ prefix }}-m-modal">
+  <div class="modal fade {{ this.class }}" id="{{ this.slug }}{{ this.id }}" tabindex="-1" role="dialog" aria-labelledby="{{ this.slug }}{{ this.id }}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          {{#block "modal-header"}}
+            <a href="#" class="close" data-dismiss="modal" aria-label="Close"></a>
+          {{/block}}
+        </div>
+        <div class="modal-body">
+          {{#block "modal-body"}}{{/block}}
+        </div>
+        <div class="modal-footer">
+          {{#block "modal-footer"}}{{/block}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

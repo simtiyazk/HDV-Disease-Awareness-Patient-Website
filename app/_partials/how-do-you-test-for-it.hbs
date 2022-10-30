@@ -1,0 +1,25 @@
+<section class="{{ global.prefix }}-m-how-do-you-test-for-it">
+  <div class="container {{prefix}}-m-how-do-you-test-for-it__content">
+    <div class="row">
+      <div class="col-12 justify-content-center">
+        <h1>{{data.stepOne.title}}</h1>
+        <p>{{{data.stepOne.descriptionLineOne}}}</p>
+        <p>{{{data.stepOne.descriptionLineTwo}}}</p>
+      </div>
+    </div>
+    <div class="{{prefix}}-m-how-do-you-test-for-it__content__status-main">
+      <div class="status-one-badge">
+        <div class="status-one">
+          <span>Step 1</span>
+        </div>
+        <h2>{{data.stepOne.stepOneTitle}}</h2>
+      </div>
+      <div class="status-one-image">
+        <img src="{{data.stepOne.srcMob}}" alt="{{data.stepOne.alt}}"/>
+        <img class="img-desktop" src="{{data.stepOne.src}}" alt="{{data.stepOne.alt}}"/>
+        <h5>{{data.stepOne.stepOneDesp}}</h5>
+      </div>
+    </div>
+    {{> scroll-to-next data=data.stepOne.next_section}}
+  </div>
+</section>

@@ -1,0 +1,79 @@
+$icon-font-path: "../fonts/";
+$images-path: "/images/";
+
+//Site Reset
+
+@import "core/reset";
+
+// Site Variables
+
+@import "core/variables";
+
+// Custom Bootstrap
+
+@import "vendors/bootstrap/variables";
+@import "vendors/bootstrap/bootstrap";
+@import "vendors/bootstrap/buttons";
+@import "vendors/swiper/swiper";
+
+// @import 'sass/variables';
+// @import 'sass/bootstrap-select';
+
+// Custom Helpers
+
+@import "helpers/mixins";
+@import "helpers/utils";
+@import "helpers/svgs";
+//Site Functions
+
+@import "helpers/functions";
+
+// Core
+
+@import "core/fonts";
+@import "core/typo";
+
+// Custom Modules
+
+@import "modules/desk-nav";
+@import "modules/mob-nav";
+// @import "modules/base-modal";
+
+@import "modules/footer";
+// @import "modules/nav";
+
+@import "modules/base-modal";
+// @import "modules/isi";
+// @import "modules/first-visit-modal";
+// @import "modules/exit-modal";
+// @import "modules/interstitial";
+// @import "modules/portal-interstitial";
+
+@import "modules/hero";
+@import "modules/scroll-to-next";
+@import "modules/hero-nav";
+@import "modules/cta";
+// @import "modules/scrollTop";
+
+@import "modules/what-are-the-signs/symptoms";
+@import "modules/what-are-the-signs/liver";
+@import "modules/support-resources";
+@import "modules/actionButton";
+@import "modules/modal-survey";
+@import "modules/survey";
+@import "modules/what-is-hep-delta";
+@import "modules/404";
+@import "modules/thank-you";
+@import "modules/who-is-at-risk/_who-is-at-risk";
+@import "modules/who-is-at-risk/_who-is-at-risk-spread";
+@import "modules/who-is-at-risk/_who-is-at-risk-from";
+@import "modules/how-do-you-test-for-it/step-one";
+@import "modules/how-do-you-test-for-it/step-two";
+
+
+// Pages
+
+@import "pages/global";
+@import "pages/home";
+@import "pages/admin";
+@import "pages/messenger";

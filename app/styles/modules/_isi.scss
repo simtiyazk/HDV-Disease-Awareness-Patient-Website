@@ -1,0 +1,230 @@
+// $isi-sidebar-needed: if you set `false`, make sure
+// that `const minScreenSizeForTray` is also `false`
+// on app/scripts/es6/modules/isi.js
+// only values accepted for this size: true or false
+$isi-sidebar-needed: true;
+
+// $isi-bottom-tray-start: value must be a valid parameter
+// for `@mixin breakpoint`
+$isi-bottom-tray-start: "desktop-down";
+
+$isi-tray-width: 350px;
+$isi-tray-bg: $color-light-gray;
+$isi-tray-scroll-indicator: $color-gray;
+$isi-tray-scroll-bar: $color-med-gray;
+
+
+@mixin isi-sidebar {
+  &.tray {
+    bottom: 0;
+    height: 100vh;
+    left: auto;
+    padding: 10px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: $isi-tray-width;
+
+    .isi-content {
+      overflow: hidden;
+      padding: 20px;
+
+      .main-content {
+        // sass-lint:disable-all
+        display: block;
+        max-height: calc(92vh - 50px);
+        overflow: hidden;
+        padding-right: 15%;
+        touch-action: none;
+        scrollbar-width: none; // Firefox
+        -ms-overflow-style: none; // IE 10+
+        // sass-lint:enable-all
+
+        // sass-lint:disable-all
+        // Webkit
+        &::-webkit-scrollbar {
+          width: 0;
+          height: 0;
+        }
+
+        .iScrollVerticalScrollbar {
+          display: none;
+          position: absolute;
+          width: 7px;
+          height: calc(92vh - 50px);
+          bottom: 13px;
+          top: 103px;
+          right: 28px;
+          background-color: $isi-tray-scroll-bar;
+
+          .iScrollIndicator {
+            position: absolute;
+            width: 100%;
+            background-color: $isi-tray-scroll-indicator;
+          }
+        }
+        // sass-lint:enable-all
+      }
+    }
+  }
+}
+
+@mixin isi-bottom {
+  &.tray {
+    bottom: 0;
+    box-shadow: -4px 1px 15px 0 $color-black-16;
+    display: block;
+    left: 0;
+    max-height: 160px;
+    padding: 0;
+    position: fixed;
+    top: unset;
+    width: 100%;
+    z-index: 1;
+
+    &.expanded {
+      height: 80%;
+      max-height: none;
+      z-index: 1;
+
+      .isi-content {
+        height: auto;
+      }
+    }
+
+    .isi-header {
+      padding-top: 0;
+    }
+
+    .isi-content {
+      display: block;
+      height: 160px;
+      padding: 10px 20px;
+      position: static;
+      width: 100%;
+
+      .main-content {
+        padding-right: 15%;
+
+        > div {
+          height: auto;
+        }
+      }
+    }
+
+    .isi-arrow {
+      background-color: $color-boulder;
+      border-radius: 50%;
+      display: inline-block;
+      height: 35px;
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      width: 35px;
+
+      &.expanded {
+        &::after {
+          @include rotate(45deg);
+          top: 5px;
+        }
+      }
+
+      &::after {
+        @include rotate(225deg);
+        border: 4px solid $white;
+        border-left: 0;
+        border-top: 0;
+        content: "";
+        display: inline-block;
+        height: 15px;
+        left: 10px;
+        position: relative;
+        top: 10px;
+        width: 15px;
+      }
+    }
+
+    @include breakpoint("tablet-down") {
+      .isi-content {
+        padding-right: 45px;
+      }
+    }
+  }
+
+  // sass-lint:disable-all
+  .iScrollVerticalScrollbar {
+    display: none;
+  }
+  // sass-lint:enable-all
+}
+
+.isi {
+  &.tray {
+    background: $isi-tray-bg;
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+
+    &.hide-tray {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  @if $isi-sidebar-needed == true {
+    @include isi-sidebar;
+
+    @include breakpoint($isi-bottom-tray-start) {
+      @include isi-bottom;
+    }
+  }
+
+  @else if $isi-sidebar-needed == false {
+    @include isi-bottom;
+  }
+
+  .isi-content {
+    padding: 20px;
+
+    .isi-header {
+      h1 {
+        margin: 0 0 20px;
+      }
+    }
+
+    &.isi-top-portion {
+      display: none;
+    }
+  }
+}
+
+@include breakpoint($isi-bottom-tray-start) {
+  .isi {
+    &.isi-top-portion {
+      bottom: 124px;
+      display: block;
+      height: 88px;
+      z-index: 1;
+
+      &.expanded {
+        bottom: 130px;
+        height: auto;
+      }
+
+      &.update-position {
+        bottom: 76%;
+
+        &.expanded {
+          bottom: 78.5%;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint("phone") {
+  .isi-top-portion {
+    &.update-position {
+      bottom: 75.5%;
+    }
+  }
+}

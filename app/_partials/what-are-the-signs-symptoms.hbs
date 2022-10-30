@@ -1,0 +1,36 @@
+<section class="{{ global.prefix }}-m-what-are-the-signs-symptoms">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <h2>{{{ data.title }}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 swiper-container">
+        <div class="{{ global.prefix }}-m-what-are-the-signs-symptoms__swiper symptomsSwiper">
+          <div class="swiper-wrapper">
+            {{#each data.carouselContent }}
+              <div class="swiper-slide">
+                <img src="{{ this.image }}" alt="{{ this.alt }}" />
+                <p>{{{ this.caption }}}</p>
+              </div>
+            {{/each}}
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="{{ global.prefix }}-m-what-are-the-signs-symptoms__purple-content">
+            <p>{{ data.purpleContent }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{> scroll-to-next data=data.next_section}}
+  </div>
+</section>

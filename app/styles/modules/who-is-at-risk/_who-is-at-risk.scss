@@ -1,0 +1,151 @@
+.#{$prefix}-m-who-is-at-risk {
+  padding: 3rem 0 5rem;
+  background-color: $color-ecru-white;
+
+  .who-1,
+  .who-2 {
+    margin: auto;
+    display: block;
+    width: 100%;
+  }
+
+  .who-1 {
+    max-width: 24rem;
+  }
+
+  .who-2 {
+    max-width: 21rem;
+  }
+
+  h1 {
+    color: $color-cardinal;
+    margin-bottom: 1.5rem;
+    font-size: 2.8rem;
+    line-height: 4rem;
+    text-align: center;
+  }
+
+  h2 {
+    color: $color-grape;
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+    text-align: center;
+  }
+
+  h4 {
+    color: $color-mind-shaft;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 2.8rem;
+  }
+
+  h6 {
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+    color: $color-mind-shaft;
+    font-weight: $bold;
+    line-height: 2.6rem;
+  }
+
+  .caption {
+    color: $color-grape;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 2.6rem;
+    font-weight: $bold;
+  }
+
+  .hepd-c-scroll-to-next {
+    text-align: center;
+    margin: 3rem 0;
+  }
+
+  @include breakpoint("phone-up") {
+    .who-1,
+    .who-2 {
+      max-width: 80%;
+    }
+  }
+
+  //Desktop
+
+  @media (-webkit-device-pixel-ratio: 1.25) and (min-width: 992px), (-webkit-device-pixel-ratio: 1.5) and (min-width: 992px){
+    height: fit-content !important;
+  }
+
+  /* Landscape ipad pro 10.5 */
+
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+    height: fit-content !important;
+  }
+
+  @media (max-height:1080px){
+    height: auto !important;
+  }
+
+  @include breakpoint ("tablet-up") {
+    height: 100vh;
+    padding-top: 14rem;
+
+    .who-1 {
+      margin-top: 2.3rem;
+      max-width: 48.6rem;
+    }
+
+    .who-2 {
+      max-width: 45rem;
+    }
+
+    .who-1,
+    .who-2 {
+      margin-bottom: 5.5rem;
+    }
+
+    h1 {
+      font-size: 5.6rem;
+      line-height: 6.2rem;
+    }
+
+    h2 {
+      font-size: 4rem;
+      line-height: 4.6rem;
+      margin-bottom: 5rem;
+    }
+
+    h6 {
+      font-size: 2.6rem;
+      line-height: 3.2rem;
+      max-width: 41rem;
+      margin: 3rem auto 4.7rem;
+    }
+
+    .hepd-c-scroll-to-next {
+      margin-top: 5rem;
+    }
+
+    .row {
+      justify-content: space-around;
+
+      .col-lg-1 {
+        padding-top: 9rem;
+      }
+
+      .col-lg-5 {
+        padding: 0;
+      }
+    }
+  }
+
+  .hepd-m-cta .col:first-child p {
+    width: 93%;
+
+    @include breakpoint("tablet-up") {
+      width: 100%;
+    }
+  }
+}

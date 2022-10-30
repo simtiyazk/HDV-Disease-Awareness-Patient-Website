@@ -1,0 +1,146 @@
+.patient-m-interstitial,
+.hcp-m-interstitial {
+  &-modal-content {
+    padding: 3.3rem 3rem 3.8rem;
+
+    .modal-header {
+      margin-bottom: 1rem;
+
+      .modal-title {
+        font-size: 2.4rem;
+        font-weight: 900;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.17;
+        letter-spacing: -0.35px;
+      }
+
+      .close {
+        background-color: $color-white;
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+      }
+
+      .close-modal {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+    }
+
+    .modal-body {
+      padding: 0;
+
+      .modal-text {
+        font-weight: 500;
+        font-size: 1.6rem;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: -0.5px;
+        line-height: 1.88;
+        text-align: left;
+
+        span {
+          font-weight: 900;
+        }
+      }
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+
+      .back,
+      .continue {
+        border-radius: 2.5rem;
+        padding: 1.4rem 2rem;
+        font-size: 1.4rem;
+        font-weight: 700;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.43;
+        letter-spacing: normal;
+        text-align: center;
+        color: $color-white;
+        text-decoration: none;
+        margin-right: 2rem;
+        transition: background-color 0.2s ease-out;
+        min-width: 10.4rem;
+      }
+
+      .back {
+        background-color: $color-tundora;
+        color: $color-white;
+        margin-right: 0;
+      }
+    }
+
+    .modal-footer > * {
+      margin: 0.26rem;
+    }
+  }
+
+  @include breakpoint("phone-up") {
+    .modal-header {
+      .modal-title {
+        font-size: 2.8rem;
+        font-weight: 900;
+        line-height: 1.36;
+        letter-spacing: -0.3px;
+      }
+
+      .close-modal {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
+
+    .modal-footer {
+      .continue {
+        margin-right: 2rem;
+      }
+    }
+  }
+}
+
+.modal-backdrop.show {
+  opacity: 0.5;
+}
+
+.patient-m-interstitial {
+  &-modal-content {
+    .modal-title {
+      text-transform: uppercase;
+    }
+
+    .continue {
+      background-color: $color-royal-heat;
+    }
+  }
+}
+
+.hcp-m-interstitial {
+  &-modal-content {
+    .modal-title {
+      color: $color-royal-heat;
+      text-transform: none;
+    }
+
+    .continue {
+      background-color: $color-blue-chill;
+    }
+  }
+
+  @include breakpoint("phone-up") {
+    &-modal-content {
+      .modal-header  {
+        .modal-title {
+          font-size: 2rem;
+          letter-spacing: -.063rem;
+          line-height: 1.35;
+        }
+      }
+    }
+  }
+}

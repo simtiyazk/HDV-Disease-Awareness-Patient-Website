@@ -1,0 +1,107 @@
+version: "3"
+services:
+  reverse_proxy:
+    image: traefik:1.7
+    container_name: "${COMPOSE_PROJECT_NAME}_reverse_proxy"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /dev/null:/traefik.toml
+    ports:
+      - "${LOCAL_PORT:-8000}:80"
+      - "${REVERSE_PROXY_PORT:-8080}:8080" # Dashboard
+    command: --web --docker --docker.domain=${PROXY_BASE_URL} --logLevel=DEBUG
+    restart: always
+    networks:
+      outside-world:
+      internal-network:
+  database:
+    image: mysql:5.7
+    container_name: "${COMPOSE_PROJECT_NAME}_database"
+    environment:
+      MYSQL_USER: ${DATABASE_USER}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "${DB_PORT:-3306}:3306"
+    restart: always
+    tty: false
+    networks:
+      internal-network:
+        aliases:
+          - "${COMPOSE_PROJECT_NAME}_database"
+  pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: "${COMPOSE_PROJECT_NAME}_pma"
+    environment:
+      PMA_USER: ${DATABASE_USER}
+      PMA_PASSWORD: ${DATABASE_PASSWORD}
+      PMA_HOST: database
+      PHP_UPLOAD_MAX_FILESIZE: 1G
+      PHP_MAX_INPUT_VARS: 1G
+    links:
+      - database:database
+    tty: false
+    networks:
+      internal-network:
+        aliases:
+          - "${COMPOSE_PROJECT_NAME}_pma"
+    labels:
+      - "traefik.backend=${COMPOSE_PROJECT_NAME}_pma"
+      - "traefik.port=80"
+      - "traefik.frontend.rule=Host:${PMA_BASE_URL}"
+      - "traefik.enable=true"
+  nginx:
+    image: nginx:alpine
+    container_name: "${COMPOSE_PROJECT_NAME}_nginx"
+    volumes:
+      - ${NGINX_CONF_DIR}:/etc/nginx/conf.d
+      - ${NGINX_LOG_DIR:-./logs/nginx}:/var/log/nginx
+      - ${RESOURCES}:/var/www/html
+    ports:
+      - "${NGINX_PORT:-80}:80"
+    links:
+      - php:php
+    working_dir: /var/www/html/
+    restart: unless-stopped
+    tty: true
+    networks:
+      internal-network:
+        aliases:
+          - "${COMPOSE_PROJECT_NAME}_nginx"
+    labels:
+      - "traefik.backend=${COMPOSE_PROJECT_NAME}_nginx"
+      - "traefik.port=80"
+      - "traefik.frontend.rule=Host:${PROJECT_BASE_URL}"
+      - "traefik.enable=true"
+  php:
+    image: hangarww/php72-fpm-wpcli-composer
+    container_name: "${COMPOSE_PROJECT_NAME}_php"
+    environment:
+      MYSQL_HOST: database
+      MYSQL_USERNAME: ${DATABASE_USER}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+    volumes:
+      - ${RESOURCES}:/var/www/html
+    ports:
+      - "${PHP_PORT:-80}:9000"
+    links:
+      - database:database
+    working_dir: /var/www/html/
+    stdin_open: true
+    restart: unless-stopped
+    tty: true
+    networks:
+      internal-network:
+        aliases:
+          - "${COMPOSE_PROJECT_NAME}_php"
+      outside-world:
+networks:
+  internal-network:
+    internal: true
+  outside-world:
+volumes:
+  db_data: {}

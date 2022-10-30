@@ -1,0 +1,20 @@
+<section class="{{prefix}}-m-survey section" id="survey">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="{{prefix}}-m-survey_main">
+                    <div class="{{prefix}}-m-survey_img">
+                        <img src="/images/survey/survey.svg" alt="Answer survey image">
+                    </div>
+                    <div class="{{prefix}}-m-survey_content">
+                        <h4>{{data.headline}}</h4>
+                        <p>{{data.subheadline_1}}</p>
+                        <h6>{{data.subheadline_2}}</h6>
+                        {{> actionButton class="survey-modal-trigger" href="#" text="Go to Survey" }}
+                        {{> survey-modal data=pages.patient.survey}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

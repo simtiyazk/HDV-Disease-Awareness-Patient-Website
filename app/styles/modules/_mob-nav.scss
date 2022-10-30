@@ -1,0 +1,125 @@
+.#{$prefix}-c-nav-mob {
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  display: none;
+
+  @include breakpoint("tablet-up") {
+    display: none;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+
+    &__item {
+      list-style: none;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      transition: 0.1s;
+      border: solid 0.1rem $color-grape;
+      padding: 0.9rem 1.5rem 0.9rem 2.5rem;
+      border-right: none;
+      background-color: $white;
+      position: relative;
+
+      a {
+        font-family: $font-rubik;
+        font-size: 1.6rem;
+        font-weight: $semibold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.38;
+        letter-spacing: -0.02rem;
+        color: $color-grape;
+        align-self: center;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      &:last-child {
+        border: solid 0.1rem $color-cardinal;
+
+        a {
+          color: $color-cardinal;
+        }
+      }
+    }
+
+    .active {
+      background-color: $color-grape;
+
+      a {
+        color: white;
+      }
+
+      &:last-child {
+        background-color: $color-cardinal;
+        border-color: $color-cardinal;
+
+        &::before {
+          content: "";
+          width: 0;
+          height: 0;
+          border-left: 1rem solid transparent;
+          border-right: 1rem solid transparent;
+          border-top: 1.2rem solid $color-cardinal;
+        }
+
+        &::after {
+          height: 4.2rem;
+          background-color: $color-cardinal;
+          bottom: -0.1rem;
+        }
+      }
+
+      &::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 1rem solid transparent;
+        border-right: 1rem solid transparent;
+        border-top: 1.2rem solid $color-grape;
+        position: absolute;
+        bottom: -1.3rem;
+        left: 1rem;
+      }
+
+      &::after {
+        content: "";
+        width: 1rem;
+        height: 4rem;
+        background-color: $color-grape;
+        position: absolute;
+        bottom: 0;
+        right: -0.9rem;
+        z-index: 1;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+      }
+    }
+
+    .hover {
+      background-color: $color-cardinal;
+
+      a {
+        color: white;
+      }
+    }
+  }
+}

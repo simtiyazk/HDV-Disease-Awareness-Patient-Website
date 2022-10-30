@@ -1,0 +1,243 @@
+//
+// Mixins
+// --------------------------------------------------
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs: 480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min: $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone: $screen-xs-min !default;
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm: 768px !default;
+$screen-sm-min: $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet: $screen-sm-min !default;
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md: 992px !default;
+$screen-md-min: $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop: $screen-md-min !default;
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg: 1200px !default;
+$screen-lg-min: $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop: $screen-lg-min !default;
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+@mixin breakpoint($points) {
+  @each $point in $points {
+    @if $point == large {
+      @media screen and (min-width: $screen-lg-min) {
+        @content;
+      }
+    }
+
+    @else if $point == desktop {
+      @media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) {
+        @content;
+      }
+    }
+
+    @else if $point == desktop-down {
+      @media screen and (max-width: $screen-md-max) {
+        @content;
+      }
+    }
+
+    @else if $point == tablet-up {
+      @media screen and (min-width: $screen-md-min) {
+        @content;
+      }
+    }
+
+    @else if $point == tablet {
+      @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        @content;
+      }
+    }
+
+    @else if $point == tablet-down {
+      @media screen and (max-width: $screen-sm-max) {
+        @content;
+      }
+    }
+
+    @else if $point == tablet-portrait-down {
+      @media screen and (max-width: $screen-xs-max) {
+        @content;
+      }
+
+      @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) and (orientation: portrait) {
+        @content;
+      }
+    }
+
+    @else if $point == tablet-landscape-up {
+      @media screen and (min-width: $screen-md-min) {
+        @content;
+      }
+
+      @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) and (orientation: landscape) {
+        @content;
+      }
+    }
+
+    @else if $point == tablet-portrait {
+      @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) and (orientation: portrait) {
+        @content;
+      }
+    }
+
+    @else if $point == tablet-landscape {
+      @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) and (orientation: landscape) {
+        @content;
+      }
+    }
+
+    @else if $point == phone-up {
+      @media screen and (min-width: $screen-sm-min) {
+        @content;
+      }
+    }
+
+    @else if $point == phone {
+      @media screen and (max-width: $screen-xs-max) {
+        @content;
+      }
+    }
+
+    @else if $point == phone-portrait {
+      @media screen and (max-width: $screen-xs-max) and (orientation: portrait) {
+        @content;
+      }
+    }
+
+    @else if $point == phone-landscape {
+      @media screen and (max-width: $screen-xs-max) and (orientation: landscape) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin alignment($align: center, $position: absolute) {
+  position: $position;
+
+  @if $align == vertical {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @else if $align == horizontal {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @else if $align == center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin fontFace($family, $style: normal, $weight: normal) {
+  @font-face {
+    font-family: $family;
+    src: url("#{$font-url}/#{$family}.eot"),
+      url("#{$font-url}/#{$family}.eot?#iefix") format("embedded-opentype"),
+      url("#{$font-url}/#{$family}.woff2") format("woff2"),
+      url("#{$font-url}/#{$family}.woff") format("woff"),
+      url("#{$font-url}/#{$family}.ttf") format("truetype"),
+      url("#{$font-url}/#{$family}.svg##{$family}") format("svg");
+    font-style: $style;
+    font-weight: $weight;
+  }
+}
+
+// sass-lint:disable-all
+
+@mixin transition($args...) {
+  -moz-transition: $args;
+  -webkit-transition: $args;
+  -o-transition: $args;
+  -ms-transition: $args;
+  transition: $args;
+}
+
+@mixin rotate($angle) {
+  -moz-transform: rotate($angle);
+  -ms-transform: rotate($angle);
+  transform: rotate($angle);
+  -webkit-transform: rotate($angle);
+}
+
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+// sass-lint:enable-all
+
+@mixin input-placeholder($fontFamily, $normalColor, $errorColor, $fontSize) {
+  // sass-lint:disable-all
+  :-ms-input-placeholder {
+    color: $normalColor;
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    opacity: 1;
+    text-transform: none;
+  }
+
+  ::-webkit-input-placeholder {
+    color: $normalColor; //font-family: $OpenSansItalic;
+    font-size: $fontSize;
+    opacity: 1;
+    text-transform: none;
+  }
+
+  ::-moz-placeholder {
+    color: $normalColor;
+    font-size: $fontSize;
+    opacity: 1;
+    font-family: $fontFamily;
+    text-transform: none;
+  }
+
+  .error {
+    color: $errorColor !important;
+    font-family: $fontFamily;
+  }
+
+  .error:-ms-input-placeholder {
+    color: $errorColor;
+    font-family: $fontFamily;
+  }
+
+  .error::-webkit-input-placeholder {
+    color: $errorColor;
+    font-family: $fontFamily;
+  }
+
+  .error::-moz-placeholder {
+    color: $errorColor;
+    font-family: $fontFamily;
+  }
+  // sass-lint:enable-all
+}
+

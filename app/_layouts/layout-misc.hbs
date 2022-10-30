@@ -1,0 +1,44 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  {{#block "head"}}
+    {{> global/head}}
+  {{/block}}
+
+  <body class="{{ global.prefix }}-p {{ page }}-page" >
+    {{#if global.gtm.enabled }}
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ global.gtm.id }}"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    {{/if}}
+
+    {{#block "svgs"}}
+      {{> global/svgs }}
+    {{/block}}
+
+    {{#block "header"}}
+      {{> global/header prefix='hepd' data=global.nav isMisc=true}}
+    {{/block}}
+
+    <div role="main">
+      {{#block "body"}}
+          <h2>this is the {{ page }} page</h2>
+      {{/block}}
+    </div>
+
+    <div class="footer">
+      {{#block "footer"}}
+        {{> global/footer prefix=global.prefix data=global.footer}}
+      {{/block}}
+    </div>
+
+    {{> global/interstitial data=pages.patient.interstitial prefix='patient'}}
+    {{> global/interstitial data=pages.patient.cookieInterstitial prefix='patient'}}
+
+    {{#block "scripts"}}
+      {{> global/scripts }}
+    {{/block}}
+
+  </body>
+</html>

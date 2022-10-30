@@ -1,0 +1,143 @@
+.#{$prefix}-m-error404Page {
+  text-align: center;
+  background-color: $color-grape_opacity;
+  overflow: hidden;
+
+  h1 {
+    font-size: 8rem;
+    font-family: $font-troutbeck-regular;
+    color: $color-cardinal;
+    font-weight: $regular;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    text-align: left;
+
+
+    @include breakpoint("tablet-up") {
+      margin: 0 auto;
+      font-size: 12rem;
+      line-height: 15rem;
+      text-align: center;
+    }
+  }
+
+  h6 {
+    color: $color-tundora;
+    font-family: $font-rubik;
+    font-size: 1.8rem;
+    font-weight: $medium;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.6rem;
+    letter-spacing: -.02rem;
+    width: 85%;
+    margin: 0 auto;
+    text-align: left;
+
+    @include breakpoint("tablet-up") {
+      width: 77%;
+      max-width: 73rem;
+      font-size: 2rem;
+      line-height: 2.8rem;
+      text-align: center;
+    }
+
+    @include breakpoint("large") {
+      width: 51%;
+    }
+  }
+
+  .cta-text-404 {
+    width: 50%;
+    margin: 2rem .6rem 2.7rem 2.7rem;
+    text-align: center;
+    padding: 1.6rem 2rem;
+    border-radius: 1.5rem;
+    background-color: $color-cardinal;
+
+    @include breakpoint("tablet-up") {
+      width: 14.3rem;
+      margin: 3rem auto 2vw;
+    }
+
+    a {
+      color: $color-white;
+      font-family: $font-rubik;
+      font-size: 2rem;
+      font-weight: $bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.4;
+      letter-spacing: -.02rem;
+      margin: 0 auto;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    min-height: 66.8rem;
+    padding-bottom: 55vw;
+
+    @include breakpoint("tablet-up") {
+      justify-content: flex-end;
+      height: 80rem;
+      min-height: auto;
+      padding-bottom: 30vw;
+      background-image: url(/images/hero/background.svg);
+      background-position: 100% 100%;
+      background-size: cover;
+    }
+
+    @include breakpoint("large") {
+      height: 102.4rem;
+    }
+
+    &__logo {
+      display: block;
+      margin: 2rem auto 0;
+
+      @include breakpoint("tablet-up") {
+        display: none;
+      }
+
+      img {
+        width: 13.4rem;
+        height: auto;
+      }
+
+    }
+
+    &__img {
+      margin-top: auto;
+      position: relative;
+      width: 250%;
+      left: -75%;
+    }
+
+    &__footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 55vw;
+      background-image: url("/images/hero/hero-illustration.svg");
+      background-repeat: no-repeat;
+      background-size: 235% 164%;
+      background-position: 50% 15%;
+
+      @include breakpoint("tablet-up") {
+        height: 30vw;
+        max-height: 45.1rem;
+        background-size: 100% 100%;
+        background-position: 0 0;
+      }
+    }
+  }
+}

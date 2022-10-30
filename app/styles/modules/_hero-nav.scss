@@ -1,0 +1,64 @@
+.#{$prefix}-c-hero-nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  bottom: 0;
+
+  @include breakpoint("tablet-up"){
+    display: none;
+  }
+
+  &_list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    &__item {
+      background-color: $color-grape_opacity95;
+      list-style: none;
+      border-left: 1px solid $color-grape;
+      border-right: 1px solid $color-grape;
+      border-bottom: 1px solid $color-grape;
+
+      &:first-child {
+        background-color: $color-grape;
+        border-radius: 1rem 1rem 0 0;
+        border: none;
+
+        img {
+          margin-left: 1rem;
+          transition: 0.5ms;
+        }
+      }
+
+      &:nth-last-child(1) {
+        border-bottom: none;
+      }
+
+      &:last-child {
+        display: none !important;
+      }
+
+      &:first-child a {
+        color: $white;
+      }
+    }
+  }
+
+  &_link {
+    text-decoration: none;
+    font-family: $font-rubik;
+    font-weight: $semibold;
+    font-size: 1.6rem;
+    color: $color-grape;
+    letter-spacing: -0.02rem;
+    line-height: 2.2rem;
+    padding: 1.5rem 0;
+    display: block;
+
+    &:hover {
+      text-decoration: none;
+      color: $color-grape;
+    }
+  }
+}

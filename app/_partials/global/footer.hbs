@@ -1,0 +1,29 @@
+<footer class="{{ prefix }}-m-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-3 image-col">
+        <a href="{{data.logo.href}}" class="external-link" target="_blank">
+          <img src="{{data.logo.image}}" alt="{{data.logo.alt}}">
+        </a>
+      </div>
+      <div class="col-12 col-md">
+        <ul>
+          {{#each data.footerLinks}}
+            <li>
+              <a href="{{this.href}}" target="_blank" class="text-muted{{#if this.external}} external-link{{/if}}">
+                {{this.text}}
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        {{#each data.footerTexts}}
+          <p>{{this}}</p>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,48 @@
+<section id="who-is-at-risk-from" class="{{prefix}}-m-who-is-at-risk-from">
+  <div class="container-fluid">
+    <div class="row">
+      <h2>
+        {{{ data.whoIsAtRiskFrom.title3 }}}
+      </h2>
+
+      <div class="col-12 swiper-container">
+        <div class="{{ global.prefix }}-m-who-is-at-risk-from__swiper">
+          <div class="swiper-wrapper">
+            {{#each data.whoIsAtRiskFrom.carouselContent2 }}
+                <div class="swiper-slide">
+                <div class="swipe_container">
+                    <img src="{{ this.image }}" alt="{{ this.alt }}" />
+                    <div class="divisor"></div>
+                </div>
+                <p class="caption">{{{ this.caption }}}</p>
+                </div>
+            {{/each}}
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row images">
+      {{#each data.whoIsAtRiskFrom.carouselContent2 }}
+        <div class="col-md-auto">
+            <div class="row">
+            <div class="col">
+                <p class="caption">{{{ this.caption }}}</p>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col"><img src="{{ this.image }}" alt="{{ this.caption }}" />
+                <div class="divisor"></div>
+            </div>
+
+            </div>
+
+        </div>
+      {{/each}}
+    </div>
+    {{> scroll-to-next data=data.whoIsAtRiskFrom.next_section}}
+  </div>
+</section>

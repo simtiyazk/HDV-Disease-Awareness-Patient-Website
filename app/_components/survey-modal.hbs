@@ -1,0 +1,35 @@
+<div class="{{ global.prefix }}-m-survey-modal">
+  {{#extend "global/base-modal" id='modal-survey' class='modal-survey' prefix=global.prefix }}
+    {{#content "modal-body" mode="prepend"}}
+    <form class="form-survey" id="form-survey" action="{{this.formAction}}">
+      {{#each data.sections}}
+        <section class="{{this.class}}">
+        <div class="modal-survey__top-text">{{{this.topText}}}</div>
+        <div class="modal-survey__title">{{{this.title}}}</div>
+        <div class="modal-survey__instruction">{{{this.instruction}}}</div>
+        <section class="modal-survey__options">
+          <div class="row">
+          {{#each this.options}}
+            <div class="modal-survey__options__column col-12 col-lg-6">
+            {{#each this}}
+              <div class="modal-survey__options__content">
+                <input class="modal-survey__option-checkbox {{ this.inputClass }}" id="{{ this.name }}" type="checkbox" name="{{ this.name }}" value="{{ this.text }}"/>
+                <label class="modal-survey__option" id="label-option" for="{{ this.name }}">
+                  <span class="modal-survey__option__image {{ this.class }}"></span>
+                  <span class="modal-survey__option__text">{{{ this.text }}}</span>
+                </label>
+              </div>
+            {{/each}}
+            </div>
+          {{/each}}
+          </div>
+        </section>
+        <div class="modal-survey__actions">
+          {{> actionButton class=this.actionButton.class href="#" text=this.actionButton.text }}
+        </div>
+        </section>
+      {{/each}}
+    </form>
+    {{/content}}
+  {{/extend}}
+</div>

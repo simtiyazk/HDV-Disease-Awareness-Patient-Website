@@ -1,0 +1,22 @@
+.actionButton {
+  display: inline-block;
+  min-width: 13.9rem;
+  height: 6rem;
+  padding: 1.7rem 3.6rem;
+  border-radius: 1.5rem;
+  background-color: $color-cardinal;
+  font-family: $font-rubik;
+  font-weight: $bold;
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+  letter-spacing: -.02rem;
+  text-decoration: none;
+  color: $white;
+
+  &:active,
+  &:hover,
+  &:visited {
+    text-decoration: none;
+    color: $white;
+  }
+}

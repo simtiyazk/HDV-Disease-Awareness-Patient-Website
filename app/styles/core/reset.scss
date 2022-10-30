@@ -1,0 +1,53 @@
+// sass-lint:disable no-vendor-prefixes force-attribute-nesting no-qualifying-elements border-zero force-pseudo-nesting no-misspelled-properties
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  // scroll-behavior: smooth;
+}
+
+body {
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a,
+a[href^="tel"] {
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+input,
+select,
+textarea {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  resize: none;
+}
+
+input:active::placeholder,
+input:focus::placeholder,
+select:active::placeholder,
+select:focus::placeholder,
+textarea:active::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+button {
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

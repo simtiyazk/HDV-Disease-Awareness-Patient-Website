@@ -1,0 +1,9 @@
+@use "../core/variables" as *;
+
+@function em($pixels, $context: $font-base-size) {
+  @return #{$pixels / $context}em;
+}
+
+@function rem($pixels) {
+  @return #{$pixels / $font-base-size}rem;
+}

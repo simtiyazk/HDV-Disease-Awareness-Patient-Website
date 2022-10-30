@@ -1,0 +1,63 @@
+.hcp-c-backtotop,
+.patient-c-backtotop {
+  background-color: $color-white;
+  border-radius: 3rem;
+  box-shadow: -1px 0 4px 0 rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  padding: .6rem 1rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 1.6rem;
+  opacity: 0;
+  width: 11.6rem;
+  z-index: 1;
+
+  @include breakpoint ("phone-up") {
+    padding: .6rem 1.4rem;
+  }
+
+  .scroll-up {
+    background-position: left .3rem;
+    background-repeat: no-repeat;
+    background-size: 1.1rem;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-family: $font-museoSans-900;
+    font-size: 1.2rem;
+    font-weight: 900;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.008rem;
+    text-align: center;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: .2rem;
+      text-underline-offset: .3rem;
+    }
+  }
+}
+
+.hcp-c-backtotop {
+  .scroll-up {
+    background-image: url("/images/hcp/arrow-up-blue.svg");
+    color: $color-blue-chill;
+
+    &:hover {
+      text-decoration-color: $color-blue-chill;
+    }
+  }
+}
+
+.patient-c-backtotop {
+  .scroll-up {
+    background-image: url("/images/patient/arrow-up-purple.svg");
+    color: $color-royal-heat;
+
+    &:hover {
+      text-decoration-color: $color-royal-heat;
+    }
+  }
+}

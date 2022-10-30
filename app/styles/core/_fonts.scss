@@ -1,0 +1,13 @@
+//
+// Typography
+// --------------------------------------------------
+
+$font-url: "../fonts";
+
+$fonts: (
+  "TroutbeckDEMO-Regular"
+);
+
+@each $family in $fonts {
+  @include fontFace($family);
+}

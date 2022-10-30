@@ -1,0 +1,37 @@
+{{#extend "layout" page="patient"
+    title="Hep Delta Information | Official Patient Site"
+    description="Hepatitis delta (hep delta, hep D, hepatitis D, HDV) harms the liver. Learn about how it affects the liver, how it's spread, and how to test for it."
+    }}
+  {{#content "body" }}
+    <div id="hepd-page">
+      {{> global/hero data=pages.patient prefix=pages.patient.prefixPage}}
+
+      <span id="what-is-hep-delta" class="section"></span>
+      {{> what-is-hep-delta data=pages.patient prefix=pages.patient.prefixPage}}
+
+
+      <span id="who-is-at-risk" class="section">
+      {{> who-is-at-risk data=pages.patient prefix=pages.patient.prefixPage}}
+      </span>
+      {{> who-is-at-risk-spread data=pages.patient prefix=pages.patient.prefixPage}}
+      {{> who-is-at-risk-from data=pages.patient prefix=pages.patient.prefixPage}}
+
+      <span id="what-are-the-signs" class="section">
+      {{> what-are-the-signs-symptoms data=pages.patient.whatAreTheSigns.symptomsContent prefix=pages.prefixPage}}
+      </span>
+      {{> what-are-the-signs-liver data=pages.patient.whatAreTheSigns.liverContent prefix=pages.prefixPage}}
+
+      <span id="how-do-you-test-for-it" class="section">
+      {{> how-do-you-test-for-it data=pages.patient.howDoYouTest prefix=pages.patient.prefixPage}}
+      </span>
+      {{> how-do-you-test-step-two data=pages.patient.howDoYouTest prefix=pages.patient.prefixPage}}
+
+      <span id="support-resources" class="section">
+      {{> support-resources data=pages.patient.support_resources prefix=pages.patient.prefixPage}}
+      </span>
+
+      {{> survey data=pages.patient.survey prefix=pages.patient.prefixPage}}
+
+    </div>
+  {{/content}}
+{{/extend}}

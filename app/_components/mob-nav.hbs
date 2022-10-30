@@ -1,0 +1,11 @@
+<nav class="{{ global.prefix }}-c-nav-mob" id="{{ global.prefix }}-c-nav-mob">
+    <ul class="{{ global.prefix }}-c-nav-mob_list">
+      {{#each global.nav.links}}
+        {{#if this.show}}
+        <li class="{{../global.prefix}}-c-nav-mob_list__item " data-url="{{ this.data_url }}">
+            <a class="{{../global.prefix}}-c-nav-mob_link {{ this.class }}" href="{{ this.href }}">{{ this.title }}</a>
+        </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+</nav>

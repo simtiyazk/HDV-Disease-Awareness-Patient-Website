@@ -1,0 +1,101 @@
+.#{$prefix}-m-thank-you {
+  text-align: center;
+  background-color: $color-grape_opacity;
+  overflow: hidden;
+
+  h1 {
+    font-size: 8rem;
+    font-family: $font-troutbeck-regular;
+    color: $color-cardinal;
+    font-weight: $regular;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.9;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  h6,
+  p {
+    color: $color-grape;
+    font-family: $font-rubik;
+    font-size: 2rem;
+    font-weight: $bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: -0.02rem;
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  p {
+    font-weight: $regular;
+    margin-bottom: 6rem;
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+
+    &__logo {
+      display: block;
+      margin: 2rem auto;
+
+      img {
+        width: 13.4rem;
+        height: auto;
+      }
+    }
+
+    &__img {
+      margin-top: auto;
+      position: relative;
+      width: 250%;
+      left: -57%;
+    }
+  }
+}
+
+@include breakpoint("tablet-up") {
+  .#{$prefix}-m-thank-you {
+    background-image: url(/images/hero/background.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 11.1rem;
+    background-position: center;
+
+    h1 {
+      font-size: 15rem;
+      margin-top: 15rem;
+    }
+
+    h6,
+    p {
+      font-size: 2.6rem;
+      line-height: 3.2rem;
+    }
+
+    p {
+      margin-bottom: 17rem;
+    }
+
+    &_content {
+      &__logo {
+        display: none;
+      }
+
+      &__img {
+        margin-top: auto;
+        position: relative;
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+}

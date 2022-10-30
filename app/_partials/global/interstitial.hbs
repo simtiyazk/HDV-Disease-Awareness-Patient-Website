@@ -1,0 +1,25 @@
+<div class="{{ prefix }}-m-interstitial">
+  <div class="modal fade" id="{{data.id}}" tabindex="-1" role="dialog" aria-labelledby="interstitialModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="{{ prefix }}-m-interstitial-modal-content modal-content">
+        <div class="modal-header">
+          <div class="text-right button-container">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            </button>
+          </div>
+          {{#if data.title}}
+            <h4 class="modal-title">{{{ data.title }}}</h4>
+          {{/if}}
+        </div>
+        <div class="modal-body">
+          <p class="modal-text">{{{ data.copy }}}</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="modal-button continue" id="external_go" target="_blank">{{ data.continue }}</a>
+          <a href="#" class="modal-button back" data-dismiss="modal">{{ data.close }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-backdrop" class="modal-backdrop-transparent modal-transition"></div>
+</div>

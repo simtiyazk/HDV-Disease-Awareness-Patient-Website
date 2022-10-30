@@ -1,0 +1,24 @@
+<nav class="{{ global.prefix }}-c-nav-desk">
+  <div class="container-fluid">
+    <div class="{{ global.prefix }}-c-nav-desk_content">
+      <a class="{{global.prefix}}-c-nav-desk_logo" href="{{ global.nav.logo.link }}">
+        <img src="{{ global.nav.logo.src }}" alt="{{ global.nav.logo.alt }}">
+      </a>
+      <ul class="{{ global.prefix }}-c-nav-desk_list">
+        {{#if isMisc}}
+            {{#each global.nav.links}}
+              <li class="{{../global.prefix}}-c-nav-desk_list__item " data-url="{{ this.data_url }}">
+                  <a class="{{../global.prefix}}-c-nav-desk_link {{ this.class }}" href="{{ this.hrefMisc }}">{{ this.title }}</a>
+              </li>
+            {{/each}}
+          {{else}}
+            {{#each global.nav.links}}
+              <li class="{{../global.prefix}}-c-nav-desk_list__item " data-url="{{ this.data_url }}">
+                  <a class="{{../global.prefix}}-c-nav-desk_link {{ this.class }}" href="{{ this.href }}">{{ this.title }}</a>
+              </li>
+            {{/each}}
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>

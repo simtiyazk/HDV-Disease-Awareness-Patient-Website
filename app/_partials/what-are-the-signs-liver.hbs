@@ -1,0 +1,44 @@
+<section id="what-are-the-signs-liver" class="{{ global.prefix }}-m-what-are-the-signs-liver">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="{{ global.prefix }}-m-what-are-the-signs-liver__content">
+          <h5>{{{ data.title }}}</h5>
+          <p>{{ data.subtitle }}</p>
+          <div class="swiper-container">
+            <div class="{{ global.prefix }}-m-what-are-the-signs-liver__content__swiper liverSwiper">
+              <div class="swiper-wrapper">
+                {{#each data.carouselContent }}
+                  <div class="swiper-slide">
+                    <div class="row">
+                      <div class="col-12 col-lg-6">
+                        <img src="{{ this.image }}" alt="{{ this.alt }}" />
+                      </div>
+                      <div class="col-12 col-lg-5 order-lg-first">
+                        <div class="slide-content{{#if this.status}} status-spacing{{/if}}">
+                          {{#if this.status }}
+                            <p class="status {{this.statusClass}}">{{ this.status }}</p>
+                          {{/if}}
+                          <h3>{{ this.title }}</h3>
+                          <ul>
+                            {{#each this.bullets }}
+                              <li>{{ this }}</li>
+                            {{/each}}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {{/each}}
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+    {{> scroll-to-next data=data.next_section}}
+  </div>
+</section>

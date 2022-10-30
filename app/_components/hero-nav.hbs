@@ -1,0 +1,12 @@
+<div class="{{global.prefix}}-c-hero-nav">
+    <ul class="{{global.prefix}}-c-hero-nav_list">
+        <li class="{{global.prefix}}-c-hero-nav_list__item">
+            <a class="{{global.prefix}}-c-hero-nav_link" data-toggle="collapse" data-target=".collapse-group" role="button" aria-expanded="false" aria-controls="hero-nav-collapse">Explore the site <img src="/images/global/arrow_menu.svg" alt="arrow menu"></a>
+        </li>
+        {{#each global.nav.links}}
+            <li class="{{../global.prefix}}-c-hero-nav_list__item collapse collapse-group">
+                <a class="{{../global.prefix}}-c-hero-nav_link {{ this.class }}" href="{{ this.href }}">{{ this.title }}</a>
+            </li>
+        {{/each}}
+    </ul>
+</div>

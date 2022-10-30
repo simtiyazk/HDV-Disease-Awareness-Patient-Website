@@ -1,0 +1,84 @@
+.#{$prefix}-m-survey {
+  &_main {
+    @include breakpoint("tablet-up"){
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &_img {
+    @include breakpoint("tablet-up"){
+      width: 50%;
+    }
+
+    img{
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &_content {
+    text-align: left;
+    width: 90%;
+
+    @include breakpoint("tablet-up"){
+      width: 50%;
+      padding-left: 5rem;
+    }
+
+    h4 {
+      font-size: 2.6rem;
+      font-family: $font-rubik;
+      color: $color-cardinal;
+      font-weight: $bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.23;
+      margin-bottom: 2rem;
+
+      @include breakpoint("tablet-up"){
+        font-size: 5.6rem;
+        line-height: 1.1;
+      }
+
+    }
+
+    h6 {
+      color: $color-grape;
+      font-family: $font-rubik;
+      font-size: 2rem;
+      font-weight: $bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.4;
+      letter-spacing: -0.02rem;
+      margin-bottom: 3rem;
+
+      @include breakpoint("tablet-up"){
+        font-size: 2.8rem;
+        line-height: 1.1;
+      }
+    }
+
+    p {
+      color: $color-grape;
+      font-family: $font-rubik;
+      font-weight: $medium;
+      font-size: 2rem;
+      line-height: 1.4;
+      letter-spacing: -0.02rem;
+      margin-bottom: 0;
+
+      @include breakpoint("tablet-up"){
+        font-size: 2.8rem;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &-modal {
+    margin-bottom: 5rem;
+  }
+}

@@ -1,0 +1,209 @@
+.modal-survey {
+  font-family: $font-rubik;
+  font-size: 1.6rem;
+  font-weight: $semibold;
+  line-height: 2.2rem;
+  letter-spacing: -0.02rem;
+  color: $color-mind-shaft;
+
+  @include breakpoint("tablet-up") {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+  }
+
+  @include breakpoint("large") {
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+    letter-spacing: -0.03rem;
+  }
+
+  &__top-text {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: -0.008rem;
+
+    @include breakpoint("tablet-up") {
+      font-size: 2rem;
+      line-height: 2.8rem;
+      letter-spacing: -0.02rem;
+    }
+  }
+
+  &__title {
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: $bold;
+    line-height: 2.8rem;
+    color: $color-cardinal;
+
+    @include breakpoint("tablet-up") {
+      font-size: 2.8rem;
+      line-height: 4rem;
+    }
+  }
+
+  &__instruction {
+    margin: 1rem 0;
+
+    @include breakpoint("tablet-up") {
+      font-size: 2.2rem;
+      line-height: 3.2rem;
+    }
+  }
+
+  &__options {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    @include breakpoint("tablet-up") {
+      display: flex;
+    }
+
+    &__content {
+      margin-top: 2rem;
+
+      @include breakpoint("tablet-up") {
+        max-width: 44.5rem;
+      }
+    }
+
+    .row {
+      @include breakpoint("tablet-up") {
+        width: 100%;
+      }
+    }
+  }
+
+  &__option {
+    display: flex;
+    height: 11rem;
+    padding: 0 1.5rem 0 2.3rem;
+    background-color: $white;
+    border-radius: 1.5rem;
+    border: 0.2rem solid $white;
+
+    &__image {
+      min-width: 5.6rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 5.6rem;
+    }
+
+    &__text {
+      display: flex;
+      align-items: center;
+      padding-left: 2.1rem;
+      color: $color-mind-shaft;
+    }
+
+    &-checkbox {
+      display: none;
+      appearance: auto;
+
+      &:checked ~ .modal-survey__option {
+        border: 0.2rem solid $color-cardinal;
+      }
+    }
+  }
+
+  &__actions {
+    margin-top: 4rem;
+    text-align: center;
+  }
+
+  &.fade {
+    .modal-dialog {
+      transform: initial;
+      transition: initial;
+
+      @include breakpoint("tablet-up") {
+        top: 30%;
+        transition: transform 0.3s ease-out;
+        transform: translate(0, -25%);
+      }
+    }
+  }
+
+  .modal {
+    &-dialog {
+      top: 5%;
+      width: 90.6%;
+      max-width: 43rem;
+      margin: 0 auto;
+      padding-bottom: 3rem;
+
+      @include breakpoint("tablet-up") {
+        width: 90%;
+        max-width: 117rem;
+      }
+
+      @include breakpoint("large") {
+        width: 82%;
+      }
+    }
+
+    &-header {
+      @include breakpoint("tablet-up") {
+        padding: 3rem 3rem 1rem 1rem;
+      }
+    }
+
+    &-body {
+      padding: 0 1.5rem 5rem;
+    }
+  }
+
+  .form-survey {
+    @include breakpoint("tablet-up") {
+      width: 90%;
+      max-width: 92rem;
+      margin: 0 auto;
+    }
+
+    @include breakpoint("large") {
+      width: 78%;
+    }
+
+    &__section-2 {
+      display: none;
+    }
+  }
+
+  .checklist-icon {
+    background-image: url("../images/survey/check-list.svg");
+  }
+
+  .liver-icon {
+    background-image: url("../images/survey/liver.svg");
+  }
+
+  .shield-icon {
+    background-image: url("../images/survey/shield.svg");
+  }
+
+  .cancer-icon {
+    background-image: url("../images/survey/cancer.svg");
+  }
+
+  .brain-icon {
+    background-image: url("../images/survey/brain.svg");
+  }
+
+  .pin-icon {
+    background-image: url("../images/survey/geolocation@2x.png");
+    background-size: 3.6rem;
+  }
+
+  .list-icon {
+    background-image: url("../images/survey/lines@2x.png");
+  }
+
+  .play-icon {
+    background-image: url("../images/survey/play.svg");
+  }
+
+  .search-icon {
+    background-image: url("../images/survey/magnifying-glass@2x.png");
+  }
+}

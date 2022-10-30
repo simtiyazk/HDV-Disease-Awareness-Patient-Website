@@ -1,0 +1,101 @@
+//
+// Global variables
+// --------------------------------------------------
+
+$prefix: "hepd";
+$subprefix: "";
+$font-base-size: 10;
+
+// .#{$prefix}-m = module
+// .#{$prefix}-p = page
+// .#{$prefix}-h = helper
+// .#{$prefix}-is = state
+
+
+// Fonts
+$font-troutbeck-regular: "TroutbeckDEMO-Regular";
+$font-rubik: "Rubik";
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extra-bold: 700;
+$font-black: 900;
+
+$browser-context: 18;
+
+// Colors
+// Please use http://chir.ag/projects/name-that-color/#6195ED as reference for the colors name
+$color-black: #000;
+$color-white: #fff;
+$color-cardinal: #c0222c;
+$color-grape: #421b59;
+$color-grape_opacity: rgba(66, 27, 89, 0.07);
+$color-grape_opacity95: rgba(242, 239, 243, 0.95);
+$color-jaffa: #f6963d;
+$color-texas-rose: #ffbe4e;
+$color-tawny-port: #6D2138;
+$color-tundora: #444444;
+$color-mind-shaft: #2d2d2d;
+$color-ecru-white: #f8f5ed;
+$color-mai-tai: #a8680a;
+$color-haiti: #291037;
+
+
+///todo: don"t use the colors below, please move colors to above
+$color-nevada: #5f6e7d;
+$color-indigo-blue: #2a3c98;
+$color-mine-shaft: #2f2f2f;
+$color-dusty-gray: #979797;
+$color-lightgray: #c2c2c2;
+$color-dark-blue-btn: #142373;
+$color-dark-blue-tooltip: #293692;
+$color-soft-yellow: #4e3b22;
+$color-border-gray: #d3d3d3;
+$color-border-orange: #e47b4e;
+$color-pale-salmon: #ffc0a5;
+$color-powder-blue: #b9e5f0;
+$color-sapphire: #2a3c97;
+$color-cornflower-blue: #6579ea;
+$color-blizzard-blue: #b9e5f0;
+$color--deep-koamaru: #132272;
+$color-gull-gray: #96a2b3;
+$color-peach-orange: #ffd59e;
+$color-rose: #ff0085;
+$color-mercury: #e4e4e4;
+$color-mine-shaft: #333333;
+$color-lipstick: #c10864;
+$color-silver: #c6c6c6;
+$color-black-10: rgba(0, 0, 0, .1);
+$color-soft-amber-60: rgba(205, 185, 176, .6);
+$color-dove-gray-24: rgba(97, 97, 97, .24);
+$cornflower-blue: rgba(36, 42, 106, .47);
+$color-bay-of-many: #222f82;
+$color-black-10: rgba(0, 0, 0, .1);
+$color-soft-amber-60: rgba(205, 185, 176, .6);
+$color-dove-gray-24: rgba(97, 97, 97, .24);
+$color-astronaut-47: rgba(36, 42, 106, .47);
+$color-soft-black: #333;
+$color-black-16: rgba(0, 0, 0, .16);
+$color-gray: #666;
+$color-red: #f15d5d;
+$color-turquoise: #009db9;
+$color-turquoise-links: #0090aa;
+$color-light-blue: #d9f0f5;
+$color-light-gray: #f2f2f2;
+$color-light-red: #fde7e7;
+$color-med-red: #ffa680;
+$color-med-gray: #c2c2c2;
+$color-deepcerulean: #007ba7;
+$color-riverbed: #434c59;
+$color-boulder: #7c7c7c;
+
+// modal styles
+$modal-dialog-margin: 10px;
+$modal-content-border-width: 1px;
+$modal-content-border-color: #f15d5d;
+$modal-inner-padding: 0 25px 20px;
+$zindex-modal: 1050;
+$zindex-modal-bg: 1000;
+$modal-backdrop: rgba(66, 27, 89, .5);

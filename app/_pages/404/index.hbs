@@ -1,0 +1,10 @@
+{{#extend "layout-misc" page="404"
+    title="404"
+    description="Page not found"
+    }}
+  {{#content "body" }}
+    <div id="404-Page">
+      {{> 404 data=pages.error404Page prefix=pages.error404Page.prefixPage}}
+    </div>
+  {{/content}}
+{{/extend}}

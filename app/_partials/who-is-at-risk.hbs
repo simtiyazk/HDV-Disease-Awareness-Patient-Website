@@ -1,0 +1,35 @@
+<section class="{{prefix}}-m-who-is-at-risk">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h1>
+                    {{ data.whoIsAtRisk.title }}
+                </h1>
+                <h2>
+                    {{ data.whoIsAtRisk.subtitle }}
+                </h2>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-5 align-self-center">
+                <img src={{ data.whoIsAtRisk.icon1}} class="who-1 svg-icon" alt="{{data.whoIsAtRisk.icon1Alt}}">
+                <h6>{{{ data.whoIsAtRisk.img1Text }}}</h6>
+            </div>
+            <div class="col-lg-1 align-self-center">
+                <h2>OR</h2>
+            </div>
+            <div class="col-lg-5 align-self-center">
+                <img src={{ data.whoIsAtRisk.icon2}} class="who-2 svg-icon" alt="{{data.whoIsAtRisk.icon2Alt}}">
+                <h6>{{{ data.whoIsAtRisk.img2Text }}}</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{> global/cta data=data.whoIsAtRisk.cta }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">{{> scroll-to-next data=data.whoIsAtRisk.next_section}}</div>
+        </div>
+    </div>
+</section>

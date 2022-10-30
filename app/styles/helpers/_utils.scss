@@ -1,0 +1,38 @@
+//
+// Utils
+// --------------------------------------------------
+
+.c-tawny-port {
+  background-color: $color-tawny-port;
+}
+
+.c-cardinal {
+  background-color: $color-cardinal
+}
+
+.c-mai-tai {
+  background-color: $color-mai-tai
+}
+
+.c-haiti {
+  background-color: $color-haiti
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+  touch-action: none;
+}
+
+.swiper-button-disabled {
+  pointer-events: auto !important;
+}

@@ -1,0 +1,56 @@
+<section class="{{prefix}}-m-what-is-hep-delta">
+  <div class="container {{prefix}}-m-what-is-hep-delta__title">
+    <div class="row">
+      <div class="col-12 justify-content-center">
+        <h1>{{{ data.whatIsHepDelta.headline }}}</h1>
+      </div>
+    </div>
+  </div>
+  <section class="{{prefix}}-m-what-is-hep-delta__main-content">
+    <div class="container {{prefix}}-m-what-is-hep-delta__content">
+      <div class="{{prefix}}-m-what-is-hep-delta__content__subhead">
+        <div class="{{prefix}}-m-what-is-hep-delta__content__subhead__img">
+          <img src="images/modules/what-is-hep-delta/what-light-bulb.svg"/>
+        </div>
+        <div class="{{prefix}}-m-what-is-hep-delta__content__subhead__text">
+          <h4>{{{ data.whatIsHepDelta.subheadline }}}</h4>
+          {{{ data.whatIsHepDelta.content }}}
+        </div>
+      </div>
+      <div class="{{prefix}}-m-what-is-hep-delta__content__info">
+        <div class="{{prefix}}-m-what-is-hep-delta__content__info__text">
+          {{{ data.whatIsHepDelta.information }}}
+        </div>
+        <div class="{{prefix}}-m-what-is-hep-delta__content__info__img" title="Man holding up a picture of a liver">
+        </div>
+      </div>
+    </div>
+    <div class="container {{prefix}}-m-what-is-hep-delta__columns">
+      <div class="{{prefix}}-m-what-is-hep-delta__columns__row">
+        {{#each data.whatIsHepDelta.columns}}
+          <div>
+              <img src="{{this.icon}}" alt="{{this.alt}}"/>
+              <div>{{{this.text}}}</div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <div class="{{prefix}}-m-what-is-hep-delta__message">
+      <div class="{{prefix}}-m-what-is-hep-delta__message__wrapper">
+        <div class="{{prefix}}-m-what-is-hep-delta__message__text">
+          {{{ data.whatIsHepDelta.message }}}
+        </div>
+        <div class="scroll-to">
+          <a href="#what-are-the-signs">
+            <img src="/images/navigation/circle-arrow-down.svg" alt="circle-arrow-down">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    {{> scroll-to-next data=data.whatIsHepDelta.next_section}}
+  </div>
+</section>

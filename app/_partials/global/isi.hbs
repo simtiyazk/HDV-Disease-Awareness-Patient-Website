@@ -1,0 +1,51 @@
+{{#ifEquals location "tray"}}
+<div class="no-gutters row isi {{ ../location }} isi-top-portion">
+  <div class="isi-content container">
+
+    <a href="javascript:void(0)" class="isi-arrow expand-isi-top-portion"></a>
+    <div class="no-gutters row isi-portion">
+      <div class="isi-header">
+        <h1>Top header</h1>
+        <p>content</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+{{/ifEquals}}
+
+<div class="{{ global.prefix }}-m-isi no-gutters row isi {{ location }} isi-body-portion">
+  <div class="isi-content container">
+    <a href="javascript:void(0)" class="isi-arrow expand-isi"></a>
+    <div class="no-gutters row">
+      <div class="isi-header">
+        {{#ifEquals location "tray"}}
+          <h1>Important safety information</h1>
+        {{/ifEquals}}
+
+        {{#ifEquals location "persistent-bottom"}}
+          <h1>Bottom Important safety information</h1>
+        {{/ifEquals}}
+      </div>
+
+      <div class="main-content scroll-wrapper">
+        <div>
+          <p><b>{{ global.isi.title }}</b></p>
+          <p>{{ global.isi.content.paragraph_1 }}</p>
+          <ul>
+            {{#each global.isi.content.list_1}}
+              <li>{{ this }}</li>
+            {{/each}}
+          </ul>
+          <p>{{ global.isi.content.paragraph_1 }}</p>
+          <ul>
+            {{#each global.isi.content.list_1}}
+              <li>{{ this }}</li>
+            {{/each}}
+          </ul>
+          <p>{{ global.isi.content.paragraph_1 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

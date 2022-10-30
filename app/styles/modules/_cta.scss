@@ -1,0 +1,62 @@
+.#{$prefix}-m-cta {
+  overflow: hidden;
+  padding: 1rem 0;
+  margin-bottom: 4rem;
+  background-color: $color-texas-rose;
+  border-radius: 1rem;
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .row {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+    background-color: $color-texas-rose;
+    border-radius: 1rem;
+    padding: 1.5rem 0;
+  }
+
+  .col:first-child {
+    align-content: flex-start;
+    text-align: left;
+
+    p {
+      color: $color-tawny-port;
+      font-size: 2rem;
+      line-height: 2.8rem;
+      font-weight: $bold;
+      padding-top: 1rem;
+    }
+  }
+
+  .col:last-child {
+    align-content: flex-end;
+    text-align: right;
+  }
+
+  @include breakpoint("tablet-up") {
+    max-width: 54rem;
+    margin: 0 auto;
+    background-color: $color-texas-rose;
+    border-radius: 1rem;
+    padding: 3.7rem 1.1rem 3.5rem 2.8rem;
+
+    img {
+      width: 4rem;
+    }
+
+    .col:first-child {
+      p {
+        font-size: 2.8rem;
+        line-height: 4rem;
+      }
+    }
+  }
+}

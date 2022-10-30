@@ -1,0 +1,43 @@
+<svg width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path id="a" d="m0 0 14.633 127.05h80.26L109.522 0z"/>
+        <path id="c" d="m0 0 10.23 96.38h70.08L90.542 0z"/>
+        <path id="e" d="M0 0h109.524v27.746H0z"/>
+        <path d="M0 8.645c0 4.774 3.915 8.644 8.745 8.644 4.831 0 8.746-3.87 8.746-8.644C17.49 3.87 13.576 0 8.745 0 3.915 0 0 3.87 0 8.645z" id="g"/>
+        <path d="M0 6.937c0 3.83 3.141 6.937 7.018 6.937 3.876 0 7.018-3.106 7.018-6.937C14.036 3.107 10.894 0 7.018 0 3.141 0 0 3.106 0 6.937z" id="i"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path d="M280 140c0 77.32-62.68 140-140 140S0 217.32 0 140 62.68 0 140 0s140 62.68 140 140" fill="#F9F0D9"/>
+        <g transform="translate(88.421 94.534)">
+            <mask id="b" fill="#fff">
+                <use xlink:href="#a"/>
+            </mask>
+            <path fill="#B5DCE5" mask="url(#b)" d="M-1.46 128.509h112.445V-1.461H-1.46z"/>
+        </g>
+        <g transform="translate(97.183 119.36)">
+            <mask id="d" fill="#fff">
+                <use xlink:href="#c"/>
+            </mask>
+            <path fill="#D6B10C" mask="url(#d)" d="M-1.46 97.842H92V-1.46H-1.46z"/>
+        </g>
+        <path fill="#C0222C" d="M88.421 104.757h109.525V77.011H88.421z"/>
+        <g transform="translate(88.421 77.011)">
+            <mask id="f" fill="#fff">
+                <use xlink:href="#e"/>
+            </mask>
+            <path fill="#C0222C" mask="url(#f)" d="M-1.46 29.206h112.445V-1.461H-1.46z"/>
+        </g>
+        <g transform="translate(117.628 142.726)">
+            <mask id="h" fill="#fff">
+                <use xlink:href="#g"/>
+            </mask>
+            <path fill="#EEC50C" mask="url(#h)" d="M-1.46 18.75h20.412V-1.46H-1.46z"/>
+        </g>
+        <g transform="translate(158.092 164.423)">
+            <mask id="j" fill="#fff">
+                <use xlink:href="#i"/>
+            </mask>
+            <path fill="#EEC50C" mask="url(#j)" d="M-1.46 15.333h16.957V-1.461H-1.46z"/>
+        </g>
+    </g>
+</svg>

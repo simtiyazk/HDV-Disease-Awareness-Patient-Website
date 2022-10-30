@@ -1,0 +1,19 @@
+<section class="{{ prefix }}-m-hero">
+  {{>hero-nav}}
+  <div class="container-fluid">
+    <div class="{{ prefix }}-m-hero_content">
+      <a href="#what-is-hep-delta" class="{{ prefix }}-m-hero_content__logo">
+        <img src="/images/global/logo.svg" alt="Link to “What is hep delta?” homepage">
+      </a>
+      <div class="{{ prefix }}-m-hero_content__headlines">
+        {{#each data.hero.headline}}
+          <h1>{{ this }}</h1>
+        {{/each}}
+      </div>
+      <h6>{{ data.hero.subheadline }}</h6>
+      {{> scroll-to-next data=data.hero.next_section}}
+      <img class="{{ prefix }}-m-hero_content__imgmob" src="/images/hero/{{ data.hero.hero_img_mob }}" alt="{{ data.hero.hero_img_alt }}">
+      <img class="{{ prefix }}-m-hero_content__imgdesk" src="/images/hero/{{ data.hero.hero_img_desk }}" alt="{{ data.hero.hero_img_alt }}">
+    </div>
+  </div>
+</section>

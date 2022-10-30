@@ -1,0 +1,36 @@
+#interstitialModalPortal {
+  @extend .hcp-m-interstitial;
+
+  .hcp-m-interstitial-modal-content {
+    padding: 3.3rem 3rem 3.8rem;
+
+    .modal-header {
+      .modal-title {
+        color: $color-dove-gray;
+        font-family: $font-museoSans-900;
+        font-size: 2.2rem;
+        line-height: 3rem;
+        letter-spacing: -0.07rem;
+      }
+    }
+
+    .modal-body {
+      .modal-text {
+        color: $color-dove-gray;
+        font-family: $font-cooperHewitt-medium;
+        font-size: 1.6rem;
+        line-height: 3rem;
+        letter-spacing: -.05rem;
+        margin-bottom: .8rem;
+      }
+
+      .modal-goto {
+        margin-bottom: 2.6rem;
+      }
+    }
+
+    @include breakpoint("tablet-up") {
+      padding: 4.4rem 7.5rem 2.4rem 3.6rem;
+    }
+  }
+}
